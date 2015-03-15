@@ -7,9 +7,11 @@ easier target :-P).
 	subdirectory on the \encode.bat file.
 * If the current \inject.bin file correlates to a different script than was
 	previously on the root of the drive, modify \current_script.txt accordingly.
-	
-New scripts should be organized as follows:
 
+The [composite duck](https://drive.google.com/uc?export=download&id=0B7uVAbdkMKcXSHpoZG9JNFBydFU) firmware is recommended.
+Flash it following the instructions on the [ducky-decode Wiki](https://code.google.com/p/ducky-decode/wiki/Flashing_Guide).
+
+New scripts should be organized as follows:
 
 ```
 scripts\
@@ -20,4 +22,9 @@ scripts\
 				description.txt			# (optional) human-readable description of this script,
 								# including other variants/versions if applicable
 				inject.bin			# binary-encoding of source.txt
+```
+
+# Copying it to an SD card:
+```sh
+cp -a ducky-scripts/* /mnt/DUCKY
 ```
