@@ -19,7 +19,7 @@ scripts\
 		[version name | "all"]\
 			[script name]\
 				source.txt			# contains the duckyscript source code
-				description.txt			# (optional) human-readable description of this script,
+				description.md			# (optional) human-readable description of this script,
 								# including other variants/versions if applicable
 				inject.bin			# binary-encoding of source.txt
 ```
