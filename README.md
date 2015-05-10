@@ -8,8 +8,8 @@ easier target :-P).
 * If the current \inject.bin file correlates to a different script than was
 	previously on the root of the drive, modify \current_script.txt accordingly.
 
-The [composite duck](https://drive.google.com/uc?export=download&id=0B7uVAbdkMKcXSHpoZG9JNFBydFU) firmware is recommended.
-Flash it following the instructions on the [ducky-decode Wiki](https://code.google.com/p/ducky-decode/wiki/Flashing_Guide).
+The [composite duck](https://cdn.rawgit.com/midnitesnake/USB-Rubber-Ducky/master/Firmware/Images/c_duck_v2.1.hex) firmware is recommended.
+Flash it following the instructions on [midnitesnake's Ducky Wiki](https://github.com/midnitesnake/USB-Rubber-Ducky/wiki/Flashing-ducky).
 
 New scripts should be organized as follows:
 
